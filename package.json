@@ -1,0 +1,20 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawelbartosik/Online-Shop.git"
+  },
+  "keywords": [],
+  "author": "Pawel Bartosik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawelbartosik/Online-Shop/issues"
+  },
+  "homepage": "https://github.com/pawelbartosik/Online-Shop#readme"
+}
