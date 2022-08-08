@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  /* background-color: rgb(44, 41, 38); */
+}
+
+main {
+  margin-top: 7rem;
+}

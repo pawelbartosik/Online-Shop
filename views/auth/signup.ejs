@@ -1,6 +1,18 @@
 <%- include("../includes/head", { title: "Signup"}) %> 
+<link rel="stylesheet" href="/styles/auth.css" />
 </head>
   <body>
-    <h1>Signup page</h1>
+    <%- include("../includes/header") %>
+    <main>
+      <form action="" class="auth">
+        <h1>Signup page</h1>
+        <p>Please create your account here!</p>
+        <hr>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+      </form>
+    </main>
   </body>
 </html>
