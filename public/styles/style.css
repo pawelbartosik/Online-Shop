@@ -3,24 +3,57 @@
 }
 
 html {
-  margin: 0;
   font-family: "Krub", sans-serif;
 
   --color-blue-700: rgb(49, 83, 153);
 
-  --color-black-700: rgb(29, 26, 24);
+  --color-black-700: rgb(16, 16, 16);
+  --color-black-500: rgb(29, 26, 24);
 
   --color-gray-500: rgb(105, 105, 105);
-  --color-gray-300: rgb(123, 123, 123);
+  --color-gray-300: rgb(114, 114, 114);
 
   --color-white-100: rgb(255, 253, 250);
 
   --shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}
 
+body {
   background-color: var(--color-white-100);
+
   /* background-color: rgb(44, 41, 38); */
+  margin: 0;
+  color: var(--color-black-700);
 }
 
 main {
   margin-top: 7rem;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.confirm-btn {
+  font: inherit;
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border-color: var(--color-blue-700);
+  background-color: var(--color-blue-700);
+  color: var(--color-white-100);
+  font-weight: bold;
+}
+
+.confirm-btn:hover,
+.confirm-btn:active {
+  background-color: var(--color-white-100);
+  color: var(--color-blue-700);
 }

@@ -7,11 +7,6 @@
   box-shadow: var(--shadow);
 }
 
-.auth ul {
-  list-style: none;
-  padding: 0;
-}
-
 .auth input {
   width: 15rem;
   margin: 0.5rem;
@@ -24,21 +19,4 @@
 
 .auth label {
   display: block;
-}
-
-.confirm-btn {
-  font: inherit;
-  width: 5rem;
-  padding: 0.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  border-color: var(--color-blue-700);
-  background-color: var(--color-blue-700);
-  color: var(--color-white-100);
-  font-weight: bold;
-}
-
-.confirm-btn:hover {
-  background-color: var(--color-white-100);
-  color: var(--color-blue-700);
 }

@@ -14,7 +14,6 @@
 
 #header-id nav ul {
   display: flex;
-  list-style: none;
 }
 
 #header-id nav ul li {
@@ -22,7 +21,6 @@
 }
 
 #header-id a {
-  text-decoration: none;
   color: var(--color-white-100);
   font-size: 1.3rem;
 }
@@ -63,7 +61,7 @@
 #side-menu {
   height: 100%;
   width: 100%;
-  background-color: var(--color-black-700);
+  background-color: var(--color-black-500);
   position: fixed;
   top: 0;
   left: 0;
@@ -85,10 +83,7 @@
 #side-menu ul {
   display: flex;
   flex-direction: column;
-  list-style: none;
   align-items: center;
-  margin: 0;
-  padding: 0;
 }
 
 #side-menu li {
@@ -96,7 +91,6 @@
 }
 
 #side-menu a {
-  text-decoration: none;
   color: var(--color-white-100);
   font-size: 2rem;
 }
