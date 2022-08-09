@@ -1,9 +1,28 @@
 <%- include("../includes/head", { title: "Login"}) %> 
+<link rel="stylesheet" href="/styles/auth.css" />
   </head>
   <body>
     <%- include("../includes/header") %>
     <main>
-      <h1>Log in page</h1>
+      <form action="" class="auth">
+        <h1>Login page</h1>
+        <p>Please login to your account</p>
+        <hr>
+        <ul>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        </li>
+          <li>
+            <label for="password">Password</label>       
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            </li>
+        </ul>
+          <hr>
+          <div>
+          <button class="confirm-btn">Login</button>
+        </div>
+      </form>
     </main>
   </body>
 </html>
