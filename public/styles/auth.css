@@ -4,7 +4,7 @@
   margin: auto;
   padding: 0.5rem 1rem 1.5rem 1rem;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--shadow);
 }
 
 .auth ul {
@@ -17,7 +17,7 @@
   margin: 0.5rem;
   font: inherit;
   margin-bottom: 1rem;
-  border: 1px solid rgb(49, 83, 153);
+  border: 1px solid var(--color-blue-700);
   border-radius: 8px;
   padding: 0.1rem 0.5rem;
 }
@@ -32,13 +32,13 @@
   padding: 0.5rem;
   border-radius: 8px;
   cursor: pointer;
-  border-color: rgb(49, 83, 153);
-  background-color: rgb(49, 83, 153);
-  color: rgb(255, 253, 250);
+  border-color: var(--color-blue-700);
+  background-color: var(--color-blue-700);
+  color: var(--color-white-100);
   font-weight: bold;
 }
 
 .confirm-btn:hover {
-  background-color: rgb(255, 253, 250);
-  color: rgb(49, 83, 153);
+  background-color: var(--color-white-100);
+  color: var(--color-blue-700);
 }

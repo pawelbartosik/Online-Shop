@@ -2,9 +2,22 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   margin: 0;
   font-family: "Krub", sans-serif;
+
+  --color-blue-700: rgb(49, 83, 153);
+
+  --color-black-700: rgb(29, 26, 24);
+
+  --color-gray-500: rgb(105, 105, 105);
+  --color-gray-300: rgb(123, 123, 123);
+
+  --color-white-100: rgb(255, 253, 250);
+
+  --shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+
+  background-color: var(--color-white-100);
   /* background-color: rgb(44, 41, 38); */
 }
 
