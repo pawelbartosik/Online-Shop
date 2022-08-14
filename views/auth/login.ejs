@@ -4,9 +4,10 @@
   <body>
     <%- include("../includes/header") %>
     <main>
-      <form action="" class="auth">
+      <form action="/login" method="post" class="auth">
         <h1>Login page</h1>
         <p>Please login to your account</p>
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
         <hr>
         <ul>
           <li>
