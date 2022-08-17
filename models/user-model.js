@@ -23,6 +23,15 @@ class User {
     return db.getDb().collection("users").findOne({ email: this.email });
   }
 
+  async boolExistingUser() {
+    const existingUser = await this.existingUser();
+    if (existingUser) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   comparePassword(hashedPassword) {
     return bcrypt.compare(this.password, hashedPassword);
   }

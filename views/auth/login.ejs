@@ -7,12 +7,15 @@
       <form action="/login" method="post" class="auth">
         <h1>Login page</h1>
         <p>Please login to your account</p>
+        <% if (inputData.errorMessage) { %> 
+          <h2 class="alert"><%= inputData.errorMessage %></h2>
+        <% } %> 
         <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
         <hr>
         <ul>
           <li>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <input type="email" name="email" id="email" placeholder="Enter your email" value="<%= inputData.email %>" required>
         </li>
           <li>
             <label for="password">Password</label>       

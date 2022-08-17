@@ -57,3 +57,11 @@ a {
   background-color: var(--color-white-100);
   color: var(--color-blue-700);
 }
+
+.alert {
+  color: red;
+  font-size: small;
+  border-radius: 8px;
+  background-color: rgb(255, 184, 184);
+  padding: 0.5rem 0;
+}
