@@ -33,6 +33,7 @@ async function signup(req, res) {
       req.body.rpt_psw
     )
   ) {
+    console.log("checkSignupInputs = false");
     sessionFlash.flashDataToSession(
       req,
       {
@@ -41,9 +42,11 @@ async function signup(req, res) {
         ...enteredData,
       },
       function () {
-        return res.redirect("/signup");
+        console.log("redirectToSignupAfterFalseInputs");
+        res.redirect("/signup");
       }
     );
+    return;
   }
 
   const user = new User(req.body.email, req.body.password, req.body.name);
