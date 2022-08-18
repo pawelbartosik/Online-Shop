@@ -33,7 +33,7 @@
   font-weight: bold;
   font-size: 2rem;
   padding: 0 8%;
-  background-color: var(--color-gray-500);
+  background-color: var(--color-orange-500);
   border-radius: 15px;
   text-transform: uppercase;
 }

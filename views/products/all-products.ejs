@@ -1,10 +1,47 @@
 <%- include("../includes/head", { title: "Main page"}) %> 
+<link rel="stylesheet" href="/styles/all-products.css">
 </head>
   <body>
     <%- include("../includes/header") %>
     <main>
         <h1>Main page</h1>
         <p>Here will be all the products!</p>
+        <section class="products-grid">
+          <ul>
+            <li>
+              <img src="/img/yaskawa.jpg" alt="Yaskawa robot">
+              <div>
+                <h2>Yaskawa</h2>
+                <button class="confirm-btn another-btn">Detail</button>
+                <button class="confirm-btn">Buy</button>
+              </div>
+            </li>
+            <li>
+              <img src="/img/abb.jpg" alt="ABB robot">
+              <div>
+                <h2>ABB</h2>
+                <button class="confirm-btn another-btn">Detail</button>
+                <button class="confirm-btn">Buy</button>
+              </div>
+            </li>
+            <li>
+              <img src="/img/kuka.jpg" alt="Kuka robot">
+              <div>
+                <h2>Kuka</h2>
+                <button class="confirm-btn another-btn">Detail</button>
+                <button class="confirm-btn">Buy</button>
+              </div>
+            </li>
+            <li>
+              <img src="/img/omron.jpg" alt="Omron robot">
+              <div>
+                <h2>Omron</h2>
+                <button class="confirm-btn another-btn">Detail</button>
+                <button class="confirm-btn">Buy</button>
+              </div>
+            </li>
+          </ul>
+        </section>
     </main>
   </body>
 </html>

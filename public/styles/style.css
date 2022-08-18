@@ -7,11 +7,14 @@ html {
 
   --color-blue-700: rgb(49, 83, 153);
 
+  --color-orange-500: rgb(255, 140, 0);
+
   --color-black-700: rgb(16, 16, 16);
   --color-black-500: rgb(29, 26, 24);
 
   --color-gray-500: rgb(105, 105, 105);
   --color-gray-300: rgb(114, 114, 114);
+  --color-gray-100: rgb(169, 168, 168);
 
   --color-white-100: rgb(255, 253, 250);
 
@@ -56,6 +59,18 @@ a {
 .confirm-btn:active {
   background-color: var(--color-white-100);
   color: var(--color-blue-700);
+}
+
+.another-btn {
+  color: var(--color-white-100);
+  background-color: var(--color-orange-500);
+  border-color: var(--color-orange-500);
+}
+
+.another-btn:hover,
+.another-btn:active {
+  color: var(--color-orange-500);
+  background-color: var(--color-white-100);
 }
 
 .alert {
