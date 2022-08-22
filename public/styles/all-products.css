@@ -29,3 +29,9 @@ main {
   object-fit: cover;
   border-radius: 10px;
 }
+
+@media (max-width: 48rem) {
+  .products-grid ul {
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+  }
+}

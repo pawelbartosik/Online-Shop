@@ -20,3 +20,9 @@
 .auth label {
   display: block;
 }
+
+@media (max-width: 48rem) {
+  .auth {
+    width: 80%;
+  }
+}

@@ -23,10 +23,12 @@
 #header-id a {
   color: var(--color-white-100);
   font-size: 1.3rem;
+  padding: 0.2rem;
 }
 
 #header-id a:hover {
-  font-weight: bold;
+  border-radius: 8px;
+  background-color: var(--color-gray-300);
 }
 
 #logo a {
