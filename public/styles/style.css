@@ -9,6 +9,9 @@ html {
 
   --color-orange-500: rgb(255, 140, 0);
 
+  --color-red-500: rgb(255, 0, 0);
+  --color-red-100: rgb(255, 184, 184);
+
   --color-black-700: rgb(16, 16, 16);
   --color-black-500: rgb(29, 26, 24);
 
@@ -54,6 +57,7 @@ a {
   background-color: var(--color-blue-700);
   color: var(--color-white-100);
   font-weight: bold;
+  transition: background-color 0.5s ease-out;
 }
 
 .confirm-btn:hover,
@@ -74,10 +78,22 @@ a {
   background-color: var(--color-white-100);
 }
 
+.delete-btn {
+  color: var(--color-red-500);
+  background-color: var(--color-red-100);
+  border-color: var(--color-red-500);
+}
+
+.delete-btn:hover,
+.delete-btn:active {
+  color: var(--color-red-100);
+  background-color: var(--color-red-500);
+}
+
 .alert {
-  color: red;
+  color: var(--color-red-500);
   font-size: small;
   border-radius: 8px;
-  background-color: rgb(255, 184, 184);
+  background-color: var(--color-red-100);
   padding: 0.5rem 0;
 }

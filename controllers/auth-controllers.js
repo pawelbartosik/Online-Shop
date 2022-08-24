@@ -132,7 +132,11 @@ async function login(req, res) {
   }
 
   authUtil.createUserSession(req, existingUser, function () {
-    res.redirect("/");
+    if (req.session.isAdmin) {
+      res.redirect("/admin");
+    } else {
+      res.redirect("/");
+    }
   });
 }
 

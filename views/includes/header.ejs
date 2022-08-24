@@ -1,6 +1,10 @@
 <header id="header-id">
   <div id="logo">
-    <a href="/">Gestamp</a>
+    <% if (locals.isAdmin) { %>
+    <a href="/admin">RobShop</a>
+    <% } else { %>
+    <a href="/">RobShop</a>
+    <% } %>
   </div>
   <%- include("./nav-bar") %>
   <a href="#side-menu" class="menu-button">

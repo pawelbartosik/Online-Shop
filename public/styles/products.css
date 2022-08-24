@@ -35,7 +35,7 @@ main {
   width: 80%;
   margin: auto;
   display: flex;
-  height: 30rem;
+  /* height: 30rem; */
   border-radius: 10px;
 }
 
@@ -43,18 +43,52 @@ main {
   width: 50%;
 }
 
-.detail-description {
-  width: 50%;
-}
-
 .detail-img img {
   width: 100%;
+  height: 30rem;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.detail-description {
+  width: 50%;
+  padding: 3rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(/img/robot.svg);
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+  background-position: 95% 30%;
+}
+
+.detail-description h1,
+h2 {
+  font-size: 2rem;
+}
+
+.detail-description button {
+  width: 7rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 48rem) {
+  .detail {
+    height: 30rem;
+  }
 }
 
 @media (max-width: 48rem) {
   .products-grid ul {
     grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+  }
+  .detail {
+    display: block;
+  }
+  .detail-img {
+    width: 100%;
+  }
+  .detail-description {
+    width: 100%;
   }
 }
