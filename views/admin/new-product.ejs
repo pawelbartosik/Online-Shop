@@ -1,0 +1,26 @@
+<%- include("../includes/head", { title: "New product page"}) %> 
+<!-- <link rel="stylesheet" href="/styles/products.css"> -->
+<link rel="stylesheet" href="/styles/auth.css" />
+</head>
+  <body>
+    <%- include("../includes/header") %>
+    <main>
+        <form action="/admin/new?_csrf=<%= locals.csrfToken %>" method="post" class="auth" enctype="multipart/form-data">
+          <h2>Add new robot</h2>
+          <hr>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" min="1" step="1" required>
+          <label for="image">Image</label>
+          <input type="file" name="image" id="image" accept="image/png,image.jpg"required>
+          <label for="description">Description</label>
+          <textarea name="description" id="description" rows="7" maxlength="250" required></textarea>
+          <div>
+            <button type="reset" class="confirm-btn another-btn">Reset</button>
+            <button class="confirm-btn">Add</button>
+          </div>
+        </form>
+    </main>
+  </body> 
+</html>
