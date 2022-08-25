@@ -30,6 +30,10 @@ main {
   border-radius: 10px;
 }
 
+.products-grid form {
+  display: inline-block;
+}
+
 .detail {
   box-shadow: var(--shadow);
   width: 80%;

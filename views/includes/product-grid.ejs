@@ -1,0 +1,20 @@
+<img src="<%= product.imageUrl %>" alt="<%= product.name %>" />
+<div>
+  <h2><%= product.name %></h2>
+  <form action="">
+    <button class="confirm-btn another-btn delete-btn">Delete</button>
+  </form>
+  <form action="/admin/update/<%= product.id %>" method="get">
+    <button class="confirm-btn another-btn">Edit</button>
+  </form>
+  <form action="/detail/<%= product.id %>" method="get">
+    <button class="confirm-btn another-btn">Detail</button>
+  </form>
+  <form action="">
+    <button class="confirm-btn">Buy</button>
+  </form>
+  <!-- <a href="" class="confirm-btn another-btn delete-btn">Delete</a>
+  <a href="" class="confirm-btn another-btn">Edit</a>
+  <a href="" class="confirm-btn another-btn">Detail</a>
+  <a href="" class="confirm-btn">Buy</a> -->
+</div>

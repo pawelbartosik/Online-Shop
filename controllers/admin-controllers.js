@@ -1,7 +1,13 @@
 const Product = require("../models/product-model");
 
-function adminProductsPage(req, res) {
-  res.render("./admin/admin-products");
+async function adminProductsPage(req, res) {
+  try {
+    const products = await Product.findAll();
+    res.render("./admin/admin-products", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
 }
 
 function getNewProduct(req, res) {
@@ -24,8 +30,23 @@ async function createNewProduct(req, res, next) {
   res.redirect("/admin/products");
 }
 
+async function getUpdateProduct(req, res) {
+  try {
+    const product = await Product.findOne(req.params.id);
+    res.render("./admin/update-product", { product: product });
+    return;
+  } catch (error) {
+    next(error);
+    return;
+  }
+}
+
+function postUpdateProduct() {}
+
 module.exports = {
   adminProductsPage: adminProductsPage,
   getNewProduct: getNewProduct,
   createNewProduct: createNewProduct,
+  getUpdateProduct: getUpdateProduct,
+  postUpdateProduct: postUpdateProduct,
 };
