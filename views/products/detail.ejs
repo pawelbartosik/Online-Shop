@@ -6,14 +6,14 @@
     <main>
         <section class="detail">
             <div class="detail-img">
-                <img src="/img/yaskawa.jpg" alt="Yaskawa robot">
+                <img src="<%= product.imageUrl %>" alt="<%= product.name %>">
             </div>
             <div class="detail-description">
-                <h1>Yaskawa</h1>
-                <h2>1999$</h2>
+                <h1><%= product.name %></h1>
+                <h2><%= product.price %>$</h2>
                 <div>
                 <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officiis excepturi tenetur expedita temporibus minima similique cum dolorum quae a nulla recusandae inventore itaque, omnis corrupti quaerat nobis ab. Perferendis?</p>
+                <p><%= product.description %></p>
                 <hr>
               </div>
                 <button class="confirm-btn">Add to cart</button>

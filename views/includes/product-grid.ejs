@@ -1,20 +1,21 @@
 <img src="<%= product.imageUrl %>" alt="<%= product.name %>" />
 <div>
   <h2><%= product.name %></h2>
-  <form action="">
+  <% if (locals.isAdmin) { %>
+  <form action="/admin/delete/<%= product.id %>" method="post">
+    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" />
     <button class="confirm-btn another-btn delete-btn">Delete</button>
   </form>
   <form action="/admin/update/<%= product.id %>" method="get">
     <button class="confirm-btn another-btn">Edit</button>
   </form>
+  <% } %>
   <form action="/detail/<%= product.id %>" method="get">
     <button class="confirm-btn another-btn">Detail</button>
   </form>
+  <% if (!locals.isAdmin) { %>
   <form action="">
     <button class="confirm-btn">Buy</button>
   </form>
-  <!-- <a href="" class="confirm-btn another-btn delete-btn">Delete</a>
-  <a href="" class="confirm-btn another-btn">Edit</a>
-  <a href="" class="confirm-btn another-btn">Detail</a>
-  <a href="" class="confirm-btn">Buy</a> -->
+  <% } %>
 </div>

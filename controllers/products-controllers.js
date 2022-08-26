@@ -4,10 +4,16 @@ function allProductsPage(req, res) {
   res.render("./products/all-products");
 }
 
-function detailPage(req, res) {
-  const product = Product.findOne();
-  console.log(product);
-  res.render("./products/detail");
+async function detailPage(req, res) {
+  try {
+    const productFromDb = await Product.findOne(req.params.id);
+    const product = new Product(productFromDb);
+    res.render("./products/detail", { product: product });
+    return;
+  } catch (error) {
+    next(error);
+    return;
+  }
 }
 
 module.exports = {

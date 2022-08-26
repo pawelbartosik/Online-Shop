@@ -1,6 +1,12 @@
+const { localsName } = require("ejs");
 const Product = require("../models/product-model");
 
 async function adminProductsPage(req, res) {
+  if (!res.locals.isAdmin) {
+    res.redirect("/");
+    return;
+  }
+
   try {
     const products = await Product.findAll();
     res.render("./admin/admin-products", { products: products });
@@ -41,6 +47,17 @@ async function getUpdateProduct(req, res) {
   }
 }
 
+async function deleteProduct(req, res) {
+  try {
+    await Product.deleteOne(req.params.id);
+    res.redirect("/admin/products");
+  } catch (error) {
+    next(error);
+    return;
+  }
+  return;
+}
+
 function postUpdateProduct() {}
 
 module.exports = {
@@ -49,4 +66,5 @@ module.exports = {
   createNewProduct: createNewProduct,
   getUpdateProduct: getUpdateProduct,
   postUpdateProduct: postUpdateProduct,
+  deleteProduct: deleteProduct,
 };

@@ -44,6 +44,18 @@ class Product {
     return product;
   }
 
+  static async deleteOne(productId) {
+    let id;
+    try {
+      id = new mongodb.ObjectId(productId);
+      await db.getDb().collection("products").deleteOne({ _id: id });
+    } catch (error) {
+      error.code = 404;
+      throw error;
+    }
+    return;
+  }
+
   async save() {
     const productData = {
       name: this.name,
