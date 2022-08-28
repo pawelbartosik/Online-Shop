@@ -41,7 +41,7 @@ class Product {
       throw error;
     }
 
-    return product;
+    return new Product(product);
   }
 
   static async deleteOne(productId) {
@@ -56,6 +56,12 @@ class Product {
     return;
   }
 
+  async replaceImage(newImage) {
+    this.image = newImage;
+    this.imagePath = `product-data/images/${newImage}`;
+    this.imageUrl = `/products/assets/images/${newImage}`;
+  }
+
   async save() {
     const productData = {
       name: this.name,
@@ -63,7 +69,21 @@ class Product {
       description: this.description,
       image: this.image,
     };
-    await db.getDb().collection("products").insertOne(productData);
+
+    if (this.id) {
+      const productId = new mongodb.ObjectId(this.id);
+
+      if (!this.image) {
+        delete productData.image;
+      }
+
+      await db
+        .getDb()
+        .collection("products")
+        .updateOne({ _id: productId }, { $set: productData });
+    } else {
+      await db.getDb().collection("products").insertOne(productData);
+    }
   }
 }
 

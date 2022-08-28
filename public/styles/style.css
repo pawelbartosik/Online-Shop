@@ -97,3 +97,12 @@ a {
   background-color: var(--color-red-100);
   padding: 0.5rem 0;
 }
+
+#image-preview img {
+  display: none;
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0.2rem auto 1rem auto;
+}

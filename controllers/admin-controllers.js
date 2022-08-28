@@ -1,7 +1,7 @@
 const { localsName } = require("ejs");
 const Product = require("../models/product-model");
 
-async function adminProductsPage(req, res) {
+async function adminProductsPage(req, res, next) {
   if (!res.locals.isAdmin) {
     res.redirect("/");
     return;
@@ -36,7 +36,7 @@ async function createNewProduct(req, res, next) {
   res.redirect("/admin/products");
 }
 
-async function getUpdateProduct(req, res) {
+async function getUpdateProduct(req, res, next) {
   try {
     const product = await Product.findOne(req.params.id);
     res.render("./admin/update-product", { product: product });
@@ -47,7 +47,7 @@ async function getUpdateProduct(req, res) {
   }
 }
 
-async function deleteProduct(req, res) {
+async function deleteProduct(req, res, next) {
   try {
     await Product.deleteOne(req.params.id);
     res.redirect("/admin/products");
@@ -58,7 +58,24 @@ async function deleteProduct(req, res) {
   return;
 }
 
-function postUpdateProduct() {}
+async function postUpdateProduct(req, res, next) {
+  const product = new Product({
+    ...req.body,
+    _id: req.params.id,
+  });
+
+  if (req.file) {
+    product.replaceImage(req.file.filename);
+  }
+
+  try {
+    await product.save();
+  } catch (error) {
+    next(error);
+    return;
+  }
+  res.redirect("/admin/products");
+}
 
 module.exports = {
   adminProductsPage: adminProductsPage,

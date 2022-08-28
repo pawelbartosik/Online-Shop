@@ -27,7 +27,7 @@
 }
 
 #header-id a:hover {
-  border-radius: 8px;
+  border-radius: 15px;
   background-color: var(--color-gray-300);
 }
 

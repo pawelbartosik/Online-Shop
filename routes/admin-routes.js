@@ -15,7 +15,11 @@ router.post("/new", imageUploadMiddleware, adminController.createNewProduct);
 
 router.get("/update/:id", adminController.getUpdateProduct);
 
-router.post("/update/:id", adminController.postUpdateProduct);
+router.post(
+  "/update/:id",
+  imageUploadMiddleware,
+  adminController.postUpdateProduct
+);
 
 router.post("/delete/:id", adminController.deleteProduct);
 
