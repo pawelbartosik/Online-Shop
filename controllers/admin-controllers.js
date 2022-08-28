@@ -2,11 +2,6 @@ const { localsName } = require("ejs");
 const Product = require("../models/product-model");
 
 async function adminProductsPage(req, res, next) {
-  if (!res.locals.isAdmin) {
-    res.redirect("/");
-    return;
-  }
-
   try {
     const products = await Product.findAll();
     res.render("./admin/admin-products", { products: products });
