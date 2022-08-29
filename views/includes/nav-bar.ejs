@@ -13,7 +13,9 @@
     </li>
     <% } %>
     <li>
-      <a href="">Cart</a>
+      <a href=""
+        >Cart <span class="badge"><%= locals.cart.totalQuantity %></span></a
+      >
     </li>
     <% if (locals.isAuth) { %>
     <li>

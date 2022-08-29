@@ -1,5 +1,6 @@
 <%- include("../includes/head", { title: "Detail page"}) %> 
 <link rel="stylesheet" href="/styles/products.css">
+<script src="/scripts/cart-management.js" defer></script>
 </head>
   <body>
     <%- include("../includes/header") %>
@@ -11,12 +12,12 @@
             <div class="detail-description">
                 <h1><%= product.name %></h1>
                 <h2><%= product.price %>$</h2>
-                <div>
+                <div> 
                 <hr>
                 <p><%= product.description %></p>
                 <hr>
               </div>
-                <button class="confirm-btn">Add to cart</button>
+                <button class="confirm-btn" data-productid="<%= product.id %>" data-csrf="<%= locals.csrfToken %>">Add to cart</button>
             </div>
         </section>
     </main>

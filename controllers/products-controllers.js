@@ -13,8 +13,7 @@ async function allProductsPage(req, res, next) {
 async function detailPage(req, res) {
   try {
     const productFromDb = await Product.findOne(req.params.id);
-    const product = new Product(productFromDb);
-    res.render("./products/detail", { product: product });
+    res.render("./products/detail", { product: productFromDb });
     return;
   } catch (error) {
     next(error);

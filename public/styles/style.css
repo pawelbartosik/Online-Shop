@@ -106,3 +106,9 @@ a {
   border-radius: 8px;
   margin: 0.2rem auto 1rem auto;
 }
+
+.badge {
+  padding: 0.01rem 0.3rem 0.01rem 0.3rem;
+  border-radius: 10px;
+  background-color: var(--color-orange-500);
+}
