@@ -1,11 +1,31 @@
 <%- include("../includes/head", { title: "Main page"}) %> 
-<link rel="stylesheet" href="/styles/products.css">
+<link rel="stylesheet" href="/styles/cart.css">
 </head>
   <body>
     <%- include("../includes/header") %>
     <main>
         <h1>Cart page</h1>
-        <section class="">
+        <section class="cart">
+          <ul>
+            <% for (const item of locals.cart.items) { %> 
+              <li class="cart-item">
+                <div>
+                  <img src="<%= item.product.imageUrl %>" alt="<%= item.name %>">
+                </div>
+                <div>
+                  <h3><%= item.product.name %></h3>
+                  <p><%= item.quantity %></p>
+                </div>
+                <div>
+                  <h3><%= item.totalPrice %></h3>
+                </div>
+                <div>
+                  <button class="confirm-btn another-btn">Delete</button>
+                </div>
+              </li>
+              <hr>
+              <% } %> 
+          </ul>
         </section>
     </main>
   </body>

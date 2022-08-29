@@ -1,0 +1,18 @@
+.cart {
+  width: 80%;
+  margin: auto;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+}
