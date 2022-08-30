@@ -91,6 +91,11 @@ a {
   background-color: var(--color-red-500);
 }
 
+.small-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .alert {
   color: var(--color-red-500);
   font-size: small;
