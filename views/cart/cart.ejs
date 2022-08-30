@@ -6,6 +6,7 @@
     <main>
         <h1>Cart page</h1>
         <section class="cart">
+          <section class="cart-list">
           <ul>
             <% for (const item of locals.cart.items) { %> 
               <li class="cart-item">
@@ -31,6 +32,11 @@
               </li>
               <% } %> 
           </ul>
+          </section>
+          <section class="cart-total">
+            <h2>Total: <%= locals.cart.totalPrice %>$</h2>
+            <button class="confirm-btn">Buy</button>
+          </section>
         </section>
     </main>
   </body>

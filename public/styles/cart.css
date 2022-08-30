@@ -1,6 +1,9 @@
 .cart {
   width: 80%;
   margin: auto;
+}
+
+.cart-list {
   box-shadow: var(--shadow);
   border-radius: 8px;
   padding: 0.5rem;
@@ -45,4 +48,18 @@
   width: 2.5rem;
   margin: auto;
   /* height: 2.5rem; */
+}
+
+.cart-total {
+  width: 15rem;
+  margin: 1.5rem 0 1rem auto;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+@media (max-width: 48rem) {
+  .cart-item {
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+  }
 }
