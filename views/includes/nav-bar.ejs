@@ -14,7 +14,10 @@
     <% } %>
     <li>
       <a href="/cart"
-        >Cart <span class="badge"><%= locals.cart.totalQuantity %></span></a
+        >Cart
+        <span class="badge" id="badge-id"
+          ><%= locals.cart.totalQuantity %></span
+        ></a
       >
     </li>
     <% if (locals.isAuth) { %>

@@ -24,7 +24,55 @@ async function addCartItem(req, res, next) {
   });
 }
 
+function increaseCartItem(req, res) {
+  const cart = res.locals.cart;
+  const updatedItemData = cart.increaseItem(req.body.productId);
+  req.session.cart = cart;
+  res.json({
+    message: "Item increased",
+    updatedCartData: {
+      newTotalQuantity: cart.totalQuantity,
+      newTotalPrice: cart.totalPrice,
+      updatedItemPrice: updatedItemData.updatedItemPrice,
+      updatedItemQuantity: updatedItemData.updatedItemQuantity,
+    },
+  });
+}
+
+function decreaseCartItem(req, res) {
+  const cart = res.locals.cart;
+  const updatedItemData = cart.decreaseItem(req.body.productId);
+  req.session.cart = cart;
+  res.json({
+    message: "Item increased",
+    updatedCartData: {
+      newTotalQuantity: cart.totalQuantity,
+      newTotalPrice: cart.totalPrice,
+      updatedItemPrice: updatedItemData.updatedItemPrice,
+      updatedItemQuantity: updatedItemData.updatedItemQuantity,
+    },
+  });
+}
+
+function removeCartItem(req, res) {
+  const cart = res.locals.cart;
+  const updatedItemData = cart.removeItem(req.body.productId);
+  req.session.cart = cart;
+  res.json({
+    message: "Item increased",
+    updatedCartData: {
+      newTotalQuantity: cart.totalQuantity,
+      newTotalPrice: cart.totalPrice,
+      updatedItemPrice: updatedItemData.updatedItemPrice,
+      updatedItemQuantity: updatedItemData.updatedItemQuantity,
+    },
+  });
+}
+
 module.exports = {
   getCartPage: getCartPage,
   addCartItem: addCartItem,
+  increaseCartItem: increaseCartItem,
+  decreaseCartItem: decreaseCartItem,
+  removeCartItem: removeCartItem,
 };

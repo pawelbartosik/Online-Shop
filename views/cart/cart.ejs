@@ -1,5 +1,6 @@
 <%- include("../includes/head", { title: "Main page"}) %> 
 <link rel="stylesheet" href="/styles/cart.css">
+<script src="/scripts/cart-item-update.js" defer></script>
 </head>
   <body>
     <%- include("../includes/header") %>
@@ -19,22 +20,22 @@
                 </div>
                 <div id="quantity-div">
                   <p class="block">Quantity</p>
-                  <button class="confirm-btn small-btn">-</button>
-                  <p class="quantity-value" id="number-<%= item.product.id %>"><%= item.quantity %></p>
-                  <button class="confirm-btn small-btn">+</button>
+                  <button class="confirm-btn small-btn minus" data-productid="<%= item.product.id %>" data-csrf="<%= locals.csrfToken %>">-</button>
+                  <p class="quantity-value"><%= item.quantity %></p>
+                  <button class="confirm-btn small-btn plus" data-productid="<%= item.product.id %>" data-csrf="<%= locals.csrfToken %>">+</button>
                 </div>
                 <div>
-                  <h3>Total: <%= item.totalPrice %>$</h3>
+                  <h3>Total: <span class="total-item-price"><%= item.totalPrice %></span>$</h3>
                 </div>
                 <div>
-                  <button class="confirm-btn another-btn small-btn">x</button>
+                  <button class="confirm-btn another-btn small-btn delete" data-productid="<%= item.product.id %>" data-csrf="<%= locals.csrfToken %>">x</button>
                 </div>
               </li>
               <% } %> 
           </ul>
           </section>
           <section class="cart-total">
-            <h2>Total: <%= locals.cart.totalPrice %>$</h2>
+            <h2>Total: <span id="total-price"><%= locals.cart.totalPrice %></span>$</h2>
             <button class="confirm-btn">Buy</button>
           </section>
         </section>
