@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const mongodb = require("mongodb");
 
 const db = require("../data/database");
 
@@ -17,6 +18,15 @@ class User {
       password: hashedPassword,
       name: this.name,
     });
+  }
+
+  static findById(id) {
+    const uid = new mongodb.ObjectId(id);
+
+    return db
+      .getDb()
+      .collection("users")
+      .findOne({ _id: uid }, { projection: { password: 0 } });
   }
 
   existingUser() {

@@ -20,12 +20,16 @@
         ></a
       >
     </li>
-    <% if (locals.isAuth) { %>
+    <% if (locals.isAdmin) { %>
     <li>
-      <!-- <form action="/logout" method="post"> -->
-      <!-- <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>" /> -->
-      <!-- <button>Logout</button> -->
-      <!-- </form> -->
+      <a href="/admin/orders">Orders</a>
+    </li>
+    <% } else if (locals.isAuth) { %>
+    <li>
+      <a href="/orders">Orders</a>
+    </li>
+    <% } %> <% if (locals.isAuth) { %>
+    <li>
       <a href="/logout">Logout</a>
     </li>
     <% } %>

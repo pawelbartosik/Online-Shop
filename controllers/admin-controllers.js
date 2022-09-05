@@ -1,5 +1,6 @@
 const { localsName } = require("ejs");
 const Product = require("../models/product-model");
+const Order = require("../models/order-model");
 
 async function adminProductsPage(req, res, next) {
   try {
@@ -72,6 +73,15 @@ async function postUpdateProduct(req, res, next) {
   res.redirect("/admin/products");
 }
 
+async function getAdminOrders(req, res, next) {
+  try {
+    const orders = await Order.findAll();
+    res.render("./admin/admin-orders", { orders: orders });
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   adminProductsPage: adminProductsPage,
   getNewProduct: getNewProduct,
@@ -79,4 +89,5 @@ module.exports = {
   getUpdateProduct: getUpdateProduct,
   postUpdateProduct: postUpdateProduct,
   deleteProduct: deleteProduct,
+  getAdminOrders: getAdminOrders,
 };

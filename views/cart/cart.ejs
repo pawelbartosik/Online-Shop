@@ -36,7 +36,14 @@
           </section>
           <section class="cart-total">
             <h2>Total: <span id="total-price"><%= locals.cart.totalPrice %></span>$</h2>
-            <button class="confirm-btn">Buy</button>
+            <% if (locals.isAuth) { %>
+            <form action="/orders" method="post">
+              <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+              <button class="confirm-btn">Buy</button>
+            </form>
+            <% } else { %>
+            <p>You need to login first</p>
+            <% } %> 
           </section>
         </section>
     </main>

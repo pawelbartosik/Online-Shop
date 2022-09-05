@@ -1,0 +1,39 @@
+<section class="flex">
+<div>
+  <h3>
+    <span id="order-total-price"><%= order.productData.totalPrice %>$</span> -
+    <%= order.formattedDate %>
+  </h3>
+  <ul>
+    <% for (const item of order.productData.items) { %>
+    <li>
+      <%= item.product.name %> - <%= item.totalPrice %>$ (<%= item.product.price
+      %>$ x <%= item.quantity %> )
+    </li>
+    <% } %>
+  </ul>
+</div>
+<div>
+  <p id="order-status"><%= order.status %></p>
+</div>
+</section>
+<% if (locals.isAdmin) { %>
+<div class="admin-menu">
+  <!-- <p>
+    <a href="mailto:<%= order.userData.email %>"><%= order.userData.name %></a>
+  </p> -->
+  <button class="confirm-btn another-btn" id="open-popup"><%= order.userData.name %></button>
+  <select name="status" id="change-status">
+    <option value="pending" <% if (order.status === 'pending') { %>selected<% } %>>Pending</option>
+    <option value="fulfilled" <% if (order.status === 'fulfilled') { %>selected<% } %>>Fulfilled</option>
+    <option value="cancelled" <% if (order.status === 'cancelled') { %>selected<% } %>>Cancelled</option>
+  </select>
+</div>
+<section class="popup">
+  <img src="/img/user.png">
+  <h3><%= order.userData.name %></h3>
+  <a href="mailto:<%= order.userData.email %>">Send a message</a>
+  <button class="confirm-btn another-btn" id="close-popup">Close</button>
+</section>
+<!-- email, address, status  -->
+<% } %>

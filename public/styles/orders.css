@@ -1,0 +1,114 @@
+.orders {
+  width: 80%;
+  margin: auto;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.order-list {
+  width: 100%;
+  border: 3px solid var(--color-blue-700);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  padding: 0 0.8rem;
+  box-shadow: var(--shadow);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orders ul {
+  list-style: square;
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+#order-total-price {
+  color: var(--color-orange-500);
+}
+
+#order-status {
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  background-color: var(--color-orange-500);
+  color: var(--color-white-100);
+}
+
+.admin-menu {
+  margin-bottom: 0.5rem;
+}
+
+select {
+  width: 7rem;
+  margin: 0.5rem;
+  font: inherit;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-blue-700);
+  border-radius: 8px;
+  padding: 0.1rem 0.5rem;
+}
+
+.popup {
+  width: 30%;
+  position: absolute;
+  top: -1em;
+  left: 50%;
+  background-color: var(--color-white-100);
+  border-radius: 8px;
+  border: 1px solid var(--color-orange-500);
+  box-shadow: var(--shadow);
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: visible;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.popup-open {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  height: 4rem;
+  margin-top: -2rem;
+}
+
+.popup h3 {
+  text-transform: uppercase;
+}
+
+.popup a {
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: var(--color-black-700);
+}
+
+.popup button {
+  margin-bottom: 0.5rem;
+}
+
+#background {
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .popup {
+    width: 50%;
+  }
+}

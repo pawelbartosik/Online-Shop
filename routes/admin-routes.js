@@ -23,4 +23,6 @@ router.post(
 
 router.post("/delete/:id", adminController.deleteProduct);
 
+router.get("/orders", adminController.getAdminOrders);
+
 module.exports = router;

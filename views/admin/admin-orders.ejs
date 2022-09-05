@@ -1,0 +1,23 @@
+<%- include("../includes/head", { title: "Orders page"}) %> 
+<link rel="stylesheet" href="/styles/orders.css">
+<script src="/scripts/orders-popup.js" defer></script>
+<script src="/scripts/update-order-status.js" defer></script>
+
+</head>
+  <body>
+    <%- include("../includes/header") %>
+    <main>
+        <h1>All orders</h1>
+        <section class="orders">
+        <div id="background"></div>
+          <ol>
+            <% for (const order of orders) { %>
+              <li class="order-list">
+              <%- include("../includes/order", { order: order }) %> 
+              </li>
+            <% } %>  
+          </ol>
+        </section>
+    </main>
+  </body>
+</html>
