@@ -45,8 +45,10 @@ async function decreaseCartItem(event) {
   const cartPriceSpan = document.getElementById("total-price");
   cartPriceSpan.textContent = responseData.updatedCartData.newTotalPrice;
 
-  const cartBadge = document.getElementById("badge-id");
-  cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  const cartBadges = document.querySelectorAll("#badge-id");
+  for (const cartBadge of cartBadges) {
+    cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  }
 }
 
 async function increaseCartItem(event) {
@@ -92,8 +94,10 @@ async function increaseCartItem(event) {
   const cartPriceSpan = document.getElementById("total-price");
   cartPriceSpan.textContent = responseData.updatedCartData.newTotalPrice;
 
-  const cartBadge = document.getElementById("badge-id");
-  cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  const cartBadges = document.querySelectorAll("#badge-id");
+  for (const cartBadge of cartBadges) {
+    cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  }
 }
 
 async function deleteCartItem(event) {
@@ -132,8 +136,10 @@ async function deleteCartItem(event) {
   const cartPriceSpan = document.getElementById("total-price");
   cartPriceSpan.textContent = responseData.updatedCartData.newTotalPrice;
 
-  const cartBadge = document.getElementById("badge-id");
-  cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  const cartBadges = document.querySelectorAll("#badge-id");
+  for (const cartBadge of cartBadges) {
+    cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+  }
 }
 
 for (const minusElement of minusButtonElements) {
