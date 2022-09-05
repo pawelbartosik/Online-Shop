@@ -82,6 +82,22 @@ async function getAdminOrders(req, res, next) {
   }
 }
 
+async function updateAdminOrders(req, res, next) {
+  const orderId = req.params.id;
+  const newStatus = req.body.newStatus;
+
+  try {
+    const order = await Order.findById(orderId);
+
+    order.status = newStatus;
+    await order.save();
+
+    res.json({ message: "Order updated", newStatus: newStatus });
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   adminProductsPage: adminProductsPage,
   getNewProduct: getNewProduct,
@@ -90,4 +106,5 @@ module.exports = {
   postUpdateProduct: postUpdateProduct,
   deleteProduct: deleteProduct,
   getAdminOrders: getAdminOrders,
+  updateAdminOrders: updateAdminOrders,
 };

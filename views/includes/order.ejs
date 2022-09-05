@@ -23,7 +23,7 @@
     <a href="mailto:<%= order.userData.email %>"><%= order.userData.name %></a>
   </p> -->
   <button class="confirm-btn another-btn" id="open-popup"><%= order.userData.name %></button>
-  <select name="status" id="change-status">
+  <select name="status" id="change-status" data-orderid="<%= order.id %>" data-csrf="<%= locals.csrfToken %>">
     <option value="pending" <% if (order.status === 'pending') { %>selected<% } %>>Pending</option>
     <option value="fulfilled" <% if (order.status === 'fulfilled') { %>selected<% } %>>Fulfilled</option>
     <option value="cancelled" <% if (order.status === 'cancelled') { %>selected<% } %>>Cancelled</option>
